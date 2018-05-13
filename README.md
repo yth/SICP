@@ -12,3 +12,11 @@ It has sample projects and teaching recommendations.
 https://groups.csail.mit.edu/mac/users/gjs/6.945/
 
 Additional Projects and reading material.
+
+## More Books
+
+Essentials of Programming Languages - Daniel P Friedman, Mitchell Wand, Christopher T Haynes
+
+Lisp in Small Pieces - Christian Queinnec, trans. Kathleen Callaway
+
+The Little Schemer - Daniel P Friedman, Matthias Felleisen
