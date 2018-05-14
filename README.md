@@ -20,3 +20,5 @@ Essentials of Programming Languages - Daniel P Friedman, Mitchell Wand, Christop
 Lisp in Small Pieces - Christian Queinnec, trans. Kathleen Callaway
 
 The Little Schemer - Daniel P Friedman, Matthias Felleisen
+
+Concepts, Techniques, and Models of Computer Programming - Peter Van Roy and Seif Haridi
