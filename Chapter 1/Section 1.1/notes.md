@@ -1,8 +1,7 @@
 # Section 1.1 Notes
 
-Languages help us manipulate ideas. There might exist a collection of primitive
-ideas [primitive is used in the sense that they are not based on something else
-from the perspective of the language][1]. Any complex idea can be build up from primitive ideas by means of
+Languages help us organize and manipulate ideas. If there exist a collection of primitive
+ideas. Any complex idea can be build up from primitive ideas by means of
 combination. We can manipulate complex ideas like primitive ideas by means of
 abstraction.
 
