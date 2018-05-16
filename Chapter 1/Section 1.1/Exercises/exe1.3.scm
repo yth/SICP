@@ -16,3 +16,17 @@
     (display "Correct")
     (display "Wrong")
 )
+
+; Alternative implementation
+
+(define (larger x y) (if (> x y) x y))
+
+(define (smaller x y) (if (< x y) x y))
+
+(define (square x) (* x x))
+
+(define (sum-of-square-of-largest-two x y z)
+    (+ (square (larger x y))
+       (square (larger (smaller x y) z))
+    )
+)
