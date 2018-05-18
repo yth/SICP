@@ -67,6 +67,8 @@
 ; A better procedure might use tolerance based on a % change from one iteration
 ; to the next.
 
+; If the next guess is significantly better, keep going.
+
 (define (good-enough2? guess x)
     (< (/ (abs (- (improve guess x) guess)) guess)
        0.0001

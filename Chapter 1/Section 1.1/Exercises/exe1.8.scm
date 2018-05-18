@@ -1,6 +1,7 @@
 ; Using (x/y^2 + 2y) / 3 to improve guess
+; Using a fixed tolerance
 
-(define tolerance 0.001)
+(define tolerance 0.0001)
 
 (define (cube x) (* x x x))
 
@@ -25,42 +26,39 @@
 
 (define (curt x) (curt-iter 1.0 x))
 
+; simple test
 (newline)
-(display (curt 8))
+(display (curt 1))(newline)
+(display (curt 8))(newline)
+(display (curt -8))(newline)
+(display (curt 27))(newline)
+(display (curt -1000))(newline)
+(display (curt 1e-30))(newline)
+(display (curt 1e60))(newline)
 
-;; ex 1.8. Based on the solution of ex 1.7. 
+; ex 1.8. Based on the solution of ex 1.7. 
+; Using a percentage change tolerance
 
-#|  
-(define (cube-root-iter guess prev-guess x) 
-   (if (good-enough? guess prev-guess) 
-       guess 
-       (cube-root-iter (improve guess x) guess x))) 
-  
- (define (improve guess x) 
-   (average3 (/ x (square guess)) guess guess)) 
-  
- (define (average3 x y z) 
-   (/ (+ x y z) 3)) 
-  
- ;; Stop when the difference is less than 1/1000th of the guess 
- (define (good-enough? guess prev-guess) 
-   (< (abs (- guess prev-guess)) (abs (* guess 0.001)))) 
-  
- (define (cube-root x) 
-   (cube-root-iter 1.0 0.0 x)) 
-  
- ;; Testing 
- (cube-root 1) 
- (cube-root -8) 
- (cube-root 27) 
- (cube-root -1000) 
- (cube-root 1e-30) 
- (cube-root 1e60) 
- ;; this fails for -2 due to zero division :( 
-  
- ;; Fix: take absolute cuberoot and return with sign 
-  
- ;;(define (cube-root x) 
- ;;  ((if (< x 0) - +)(cube-root-iter (improve 1.0 (abs x)) 1 (abs x))))
+(define (good-enough2? guess x)
+    (< (/ (abs (- (improve guess x) guess)) (abs guess))
+        tolerance
+    )
+)
 
-|#
+(define (curt-iter2 guess x)
+    (if (good-enough2? guess x)
+        guess
+        (curt-iter2 (improve guess x) x)
+    )
+)
+
+(define (curt2 x) (curt-iter2 1.0 x))
+  
+; simple test
+(display (curt2 1))(newline)
+(display (curt2 8))(newline)
+(display (curt2 -8))(newline)
+(display (curt2 27))(newline)
+(display (curt2 -1000))(newline)
+(display (curt2 1e-30))(newline)
+(display (curt2 1e60))(newline)
