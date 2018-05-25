@@ -18,12 +18,12 @@
 ; Test
 
 (define (assert-eq exp1 exp2)
-    (if (eq? exp1 exp2)
-        ((newline)(display "True")(newline))
-        ((newline)(display "False")(newline))
+    (if (= exp1 exp2)
+        (display "True")
+        (display "False")
     )
 )
 
 (assert-eq (fast-expt 1 2) 1)
-; (assert-eq (fast-expt 2 4) 16)
-; (assert-eq (fast-expt 2 -5) (/ 1 32))
+(assert-eq (fast-expt 2 4) 16)
+(assert-eq (fast-expt 2 -4) 1/16)
