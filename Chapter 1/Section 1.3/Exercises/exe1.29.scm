@@ -20,10 +20,11 @@
     (* (/ h 3.0)
         (+ (f a)
            (f b)
-           (* 4 (sum term (+ a 1) next b))
-           (* 2 (sum term (+ a 2) next b))
+           (* 4 (sum term 1 next n))
+           (* 2 (sum term 2 next n))
         )
     )
 )
 
+(newline)
 (display (simpsons cube 0 1 1000)) ; expect something around 1/4
