@@ -25,6 +25,12 @@ Some resources for the AI course:
 
 https://ai6034.mit.edu/wiki/index.php?title=Main_Page
 
+### Other people's attempts at similar projects
+
+http://www.billthelizard.com/2009/10/sicp-challenge.html
+
+https://eli.thegreenplace.net/tag/sicp
+
 ### More Books and Resources
 
 Some directly related to SICP and Scheme, and others are for exploring more
