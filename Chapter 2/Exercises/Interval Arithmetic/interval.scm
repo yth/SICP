@@ -65,4 +65,15 @@
 (define (lower-bound x) (car x))
 (define (upper-bound x) (cdr x))
 
+; Exercise 2.8
+;
+; Subtraction usually is the inverse of addition. If addition is to add the
+; lower bounds and upper bounds with together with their like, then subtraction
+; would should do the same.
 
+(define (sub-interval x y)
+    (make-interval
+        (- (lower-bound x) (lower-bound y))
+        (- (upper-bound x) (upper-bound y))
+    )
+)
