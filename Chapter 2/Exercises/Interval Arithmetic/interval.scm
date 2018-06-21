@@ -54,7 +54,12 @@
 
 ; Exercise 2.7
 
-(define (make-interval a b) (cons a b))
+(define (make-interval a b) 
+    (if (< a b)
+        (cons a b)
+        (cons b a)
+    )
+)
 
 ; Clearly there is an issue of order, although the choice doesn't matter as much
 ; as having made a choice.
@@ -70,6 +75,10 @@
 ; Subtraction usually is the inverse of addition. If addition is to add the
 ; lower bounds and upper bounds with together with their like, then subtraction
 ; would should do the same.
+;
+; However, there is a possibility that the resulting upper bound might be lower
+; than the resulting lower bound, so I should modify the constructor to set the
+; lower value to be the lower bound, and the higher value to be the upper bound.
 
 (define (sub-interval x y)
     (make-interval
