@@ -86,3 +86,15 @@
         (- (upper-bound x) (upper-bound y))
     )
 )
+
+; Exercise 2.9
+;
+; In cases of additional and subtraction, the lower-bounds are added together or
+; one is subtracted from the other. It is the same for upper-bound. The result
+; gives the new interval for where the combined estimated value reside.
+; The resulting width of the new interval after addition and subtraction depend
+; on the width of the interval involved in the operation.
+;
+; In cases of multiplication and division, the boundary value plays the primary
+; role. The result of the operation depends on the boundary values rather than
+; the width value.
