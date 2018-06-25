@@ -98,3 +98,14 @@
 ; In cases of multiplication and division, the boundary value plays the primary
 ; role. The result of the operation depends on the boundary values rather than
 ; the width value.
+
+; Exercise 2.10
+
+(define (div-interval x y)
+    (if (= 0 (- (upper-bound y) (lower-bound y)))
+        (display "Divide by Zero Error")
+        (mul-interval x
+            (make-interval (/ 1.0 (upper-bound y)) (/ 1.0 (lower-bound y)))
+        )
+    )
+)
