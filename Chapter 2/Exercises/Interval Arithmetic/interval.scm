@@ -130,4 +130,12 @@
 ;
 ; Skipped at this reading
 
-
+; Exercise 2.16
+;
+; The fundamental issue seems to be that interval arithmetic does not obey the
+; same rules as regular arithmetic. In other words, intervals and interval
+; operations does not make a field. To get "correct" answer we want, we can use
+; other techniques like minimizing the number of interval operations evaluated
+; in the process. However, that gets us into the problem of generalizing such a
+; method. This is very hard. We are trying to take arbitrary computations and
+; reduce it so that each interval variable is independent from each other.
