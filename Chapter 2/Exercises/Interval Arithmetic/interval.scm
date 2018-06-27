@@ -113,3 +113,21 @@
 ; Exercise 2.11
 ;
 ; Skipped at this reading
+
+; Exercise 2.12
+;
+; Skipped at this reading
+
+; Exercise 2.13
+;
+; Skipped at this reading
+
+; Exercise 2.14
+;
+; Skipped at this reading
+
+; Exercise 2.15
+;
+; Skipped at this reading
+
+
