@@ -30,10 +30,14 @@
 (newline)
 (display (matrix-*-vector m v))
 
-#|
 (define (transpose mat)
-    (accumulate-n <??> <??> mat)
+    (accumulate-n cons '() mat)
 )
+
+(newline)
+(display m)
+(newline)
+(display (transpose m))
 
 (define (matrix-*-matrix m n)
     (let 
@@ -41,6 +45,5 @@
             (cols (transpose n))
         )
 
-        (map <??> m))
+        (map (matrix-*-vector v) m))
 )
-|#
