@@ -31,7 +31,7 @@
 (display (matrix-*-vector m v))
 
 (define (transpose mat)
-    (accumulate-n cons '() mat)
+    (accumulate-n cons nil mat)
 )
 
 (newline)
@@ -39,11 +39,19 @@
 (newline)
 (display (transpose m))
 
+#|
 (define (matrix-*-matrix m n)
     (let 
         (
             (cols (transpose n))
         )
 
-        (map (matrix-*-vector v) m))
+        (map <??> m))
 )
+
+(define i2 (list (list 1 0) (list 0 1)))
+(define ones2 (list (list 1 1) (list 1 1)))
+(newline)
+(display (matrix-*-matrix m n))
+
+|#
