@@ -40,3 +40,19 @@
         (else (error "Unknown procedure type -- APPLY" procedure))
     )
 )
+
+; list-of-value is implemented in such a way that it does not require higher
+; order functions.
+;
+; It's also interesting to note that it has the general shape of an accumulate
+; function.
+
+(define (list-of-values exps env)
+    (if (no-operands? exps)
+        '()
+        (cons (eval (first-operand exps) env)
+              (list-of-values (rest-operands exps) env))
+    )
+)
+
+
