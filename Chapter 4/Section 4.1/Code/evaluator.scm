@@ -75,6 +75,7 @@
         (eval (assignment-value exp) env)
         env
     )
+    'ok
 )
 
 (define (eval-definition exp env)
@@ -83,4 +84,5 @@
         (eval (definition-value exp) env)
         env
     )
+    'ok
 )
