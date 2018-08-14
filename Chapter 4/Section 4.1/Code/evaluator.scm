@@ -99,4 +99,15 @@
 
 (define (variable? exp) (symbol? exp))
 
+(define (quoted? exp) (tagged-list? exp 'quote))
+
+(define (tagged-list? exp tag)
+    (if (pair? exp)
+        (eq? (car exp) tag)
+        false
+    )
+)
+
+(define (text-of-quotation exp) (cadr exp)) ; Why not just (cdr exp)?
+
 
