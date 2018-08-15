@@ -110,4 +110,13 @@
 
 (define (text-of-quotation exp) (cadr exp)) ; Why not just (cdr exp)?
 
+; Assignment
+
+(define (assignment? exp)
+    (tagged-list? exp 'set!))
+
+(define (assignment-variable exp) (cadr exp))
+
+(define (assignment-value exp) (caddr exp))
+
 
