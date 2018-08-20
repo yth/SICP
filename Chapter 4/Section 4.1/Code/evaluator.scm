@@ -152,4 +152,45 @@
     (cons 'lambda (cons parameters body))
 )
 
+; Conditional expressions (if)
+
+(define (if? exp) (tagged-list? exp 'if))
+(define (if-predicate exp) (cadr exp))
+(define (if-consequent exp) (caddr exp))
+(define (if-alternative exp)
+    (if (not (null? (cdddr exp)))
+        (cdddr exp)
+        'false
+    )
+)
+
+(define (make-if predicate consequent alternative)
+    (list 'if predicate consequent alternative)
+)
+
+; Begin expressions
+
+(define (begin? exp) (tagged-list? exp 'begin))
+(define (begin-actions exp) (cdr exp))
+(define (last-exp? seq) (null? (cdr seq)))
+(define (first-exp seq) (car seq))
+(define (rest-exp seq) (cdr seq))
+
+(define (sequence->exp seq)
+    (cond
+        ((null? seq) seq)
+        ((last-exp? seq) (first-exp seq))
+        (else (make-begin seq))
+    )
+)
+
+; Procedure/Application expressions
+
+(define (application? exp) (pair? exp))
+(define (operator exp) (car exp))
+(define (operand exp) (cdr exp))
+(define (no-operands? ops) (null? ops))
+(define (first-operand ops) (car ops))
+(define (rest-operand ops) (cdr ops))
+
 
