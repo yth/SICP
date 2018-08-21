@@ -193,4 +193,38 @@
 (define (first-operand ops) (car ops))
 (define (rest-operand ops) (cdr ops))
 
+; Derived Expressions
 
+(define (cond? exp) (tagged-list? exp 'cond))
+(define (cond-clause exp) (cdr exp))
+(define (cond-else-clause? clause)
+    (eq? (cond-predicate clause) 'else)
+)
+(define (cond-predicate clause) (car clause))
+(define (cond-actions clause) (cdr clause))
+(define (cond->if exp) (expand-clauses (cond-clause exp)))
+
+(define (expand-clauses clauses)
+    (if (null? clauses)
+        'false
+        (let
+            (
+                (first (car clauses))
+                (rest (cdr clauses))
+            )
+
+            (if (cond-else-clause? first)
+                (sequence->exp (cond-actions first))
+                (error "ELSE clause isn't last -- COND->IF" clauses)
+            )
+
+            (make-if
+                (cond-predicate first)
+                (sequence->exp (cond-actions first))
+                (expand-clauses rest)
+            )
+        )
+    )
+)
+
+            
