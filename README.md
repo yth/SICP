@@ -1,6 +1,8 @@
 # SICP
 Working through SICP as a means to start programming language studies.
 
+On hiatus and will only be worked on occassionally until January 2019
+
 ## Additional Resources:
 
 ### SICP Supplement Site:
