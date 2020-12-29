@@ -6,17 +6,14 @@
     )
 )
 
-(assert-eq
-10
-10)
+(assert-eq 10 10)
 
 (assert-eq
 (+ 5 3 4)
 12)
 
 (assert-eq
-(- 9 1)
-8)
+ (- 9 1) 8)
 
 (assert-eq
 (/ 6 2)
@@ -35,8 +32,8 @@
 19)
 
 (assert-eq
-(= a b)
-False)
+ (= a b)
+ False)
 
 (assert-eq
 (if (and (> b a) (< b (* a b)))
